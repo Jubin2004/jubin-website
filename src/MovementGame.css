@@ -1,0 +1,62 @@
+.game-area {
+  width: 1000px;
+  height: 600px;
+  top: 280px;
+  left: 25%;
+  background: #0c192c;
+  position: absolute;
+  border:#4fc3dc solid 5px;
+  overflow: hidden;
+  text-align: center;
+}
+.player {
+  width: 50px;
+  height: 50px;
+  position: flex;
+  transition: transform 0.1s ease;
+}
+.coordinates-container {
+    width: 500px;
+    height: 80px;
+    left: 38%;
+    top: 170px;
+    border:#4fc3dc solid 5px;
+    position: absolute;
+    background: #0c192c;
+    text-align: center;
+}
+.controls-container {
+    position: absolute;
+    background: #0c192c;
+    border:#4fc3dc solid 5px;
+    width: 500px;
+    height: 120px;
+    top: 20px;
+    left: 38%;
+    bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+}
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.controls-row {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 5px;
+}
+.my-font {
+  font-family: 'PixelPurl', sans-serif;
+}
+.coordinates {
+    color: white;
+    font-size: 50px;
+}
+img {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,7 @@
+.body {
+  color: wheat;
+  background-size: cover;   /* make it fill the screen */
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}

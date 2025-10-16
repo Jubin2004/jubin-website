@@ -1,0 +1,54 @@
+.Parent-container{
+    position: "relative";
+    background-color: #2a423e;
+    min-height: 1800px;
+    min-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+}
+.my-font {
+  font-family: 'PixelPurl', sans-serif;
+  color:white;
+  font-size: 30px;
+}
+.Title{
+    font-size: 150px;
+    position: relative;
+    color:rgb(126, 121, 175);
+}
+.Column-container{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 20px 20px 20px;
+}
+.Box-container{
+    position: relative;
+    background-color: rgb(29, 2, 63);
+    width: 500px;
+    height: 250px;
+    align-items: center;
+    border: rgb(21, 12, 100) solid 5px;
+    border-radius: 5%;
+    animation: fadeIn 2s;
+    animation-duration: 3s;
+}
+.vl {
+  border-left: 8px double rgb(21, 12, 100);
+  border-radius: 40%;
+  height: 200px;
+}
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

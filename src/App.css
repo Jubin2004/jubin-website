@@ -1,0 +1,119 @@
+.All {
+  position: relative;
+  background-color: wheat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+}
+.my-font {
+  font-family: 'PixelPurl', sans-serif;
+  color: rgb(126, 121, 175);
+}
+.Top-container {
+    position: "relative";
+    background-color: #2a423e;
+    min-height: 1800px;
+    min-width: 1200px;
+    text-align: center;
+    margin: 0 auto;
+    overflow: hidden;
+    z-index: 1;
+}
+.game-container{
+    position: relative;
+}
+.Link-container {
+    text-align: center;
+}
+.Top {
+  font-size: 100px;
+  position: "relative";
+}
+.Under-Top {
+    font-size: 20px;
+}
+.Further {
+    font-size: 20px;
+}
+.background-container
+{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+.bubbles 
+{
+    position: relative;
+    display: flex;
+}
+.bubbles span 
+{
+    position: relative;
+    width: 5px;
+    height: 5px;
+    background: #a939ad;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 2px #a939ad44,
+    0 0 4px #a939ad,
+    0 0 8px #a939ad;
+    animation: animate1 15s linear infinite;
+    animation-duration: calc(400s / var(--i));
+}
+.bubbles span:nth-child(even)
+{
+    background: #499930;
+    box-shadow: 0 0 0 2px #49993044,
+    0 0 4px #499930,
+    0 0 8px #499930;
+}
+.bubbles-big
+{
+    position: absolute;
+    display: flex;
+}
+.bubbles-big span 
+{
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background: #0e7ea0;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #0e7ea044,
+    0 0 50px #0e7ea0,
+    0 0 100px #0e7ea0;
+    animation: fadeInPop 2s ease-out forwards, animate2 5s linear infinite;
+    animation-duration: calc(200s / var(--i));
+}
+@keyframes fadeInPop {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes animate1 {
+    0% {
+        transform: translateY(1800px);
+    }
+    100% {
+        transform: translateY(-10vh);
+    }
+}
+@keyframes animate2 {
+    0% {
+        transform: scale(0.5);
+    }
+    50% {
+        transform: scale(0.9)
+    }
+    100% {
+        transform: scale(0.5);
+    }
+}
