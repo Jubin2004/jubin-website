@@ -78,7 +78,7 @@
     position: relative;
 }
 .City {
-    display: block;
+    display: inline-block;
     font-size: 20px;
     left: 490px;
     bottom: 50px;

@@ -17,15 +17,15 @@ function Home() {
         <p className="Top my-font">Welcome to my world.</p>
         <p className="Under-Top my-font">~Jubin Gafur</p>
         <Link className="Plane my-font" to="/AppListGroup">
-          <a><img src={arrow}/></a>
+          <img src={arrow}/>
         </Link>
         <br />
         <Link className="Bubble my-font" to="/Game">
-          <a><img src={arrow}/></a>
+          <img src={arrow}/>
         </Link>
         <br />
         <Link className="City my-font" to="/">
-          <a><img src={arrow}/></a>
+          <img src={arrow}/>
         </Link>
       </div>
     </div>
