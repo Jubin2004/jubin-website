@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'FrutigerWeb';
+  src: url('fonts/Frutiger-Web.woff2') format('woff2'),
+       url('fonts/Frutiger-Web.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
 .All {
   position: relative;
   background-color: wheat;
@@ -7,31 +15,74 @@
   height: 100vh;
 }
 .my-font {
-  font-family: 'PixelPurl', sans-serif;
-  color: rgb(126, 121, 175);
+  font-family: 'FrutigerWeb', Sans-Serif;
+  color: rgb(255, 255, 255);
+}.game-font {
+  font-family: 'PixelPurl';
+  font-style: normal;
+  font-weight: 500;
+  src: local('PixelPurl'), url('https://fonts.cdnfonts.com/s/124879/PixelPurl.woff') format('woff');
+  color: rgb(255, 255, 255);
 }
 .Top-container {
-    position: "relative";
-    background-color: #2a423e;
-    min-height: 1800px;
-    min-width: 1200px;
+    position: relative;
+    background-image: url("components/pics/frutaer/frutiger-aero-wallpaper-i-whipped-up-in-a-few-hours-hoping-v0-jcaq7gsamypc1.webp");
+    background-size: cover;       /* or contain */
+    background-repeat: no-repeat; /* don’t tile the image */
+    background-position: center;
+    min-height: 945px;
+    min-width: 1000px;
     text-align: center;
     margin: 0 auto;
-    overflow: hidden;
+    overflow: hidden;   
     z-index: 1;
 }
-.game-container{
-    position: relative;
-}
-.Link-container {
+.Game-container {
+    background-color: rgb(147, 210, 235);
+    background-size: cover;
+    background-position: center;
+    min-height: 1800px;
+    min-width: 1100px;
     text-align: center;
+    margin: 0 auto;
+    overflow: hidden;   
+    z-index: 1;
+}
+.Frutiger-city {
+    margin-left: 100px;
+    width: 500px;
+    height: 500px;
 }
 .Top {
   font-size: 100px;
-  position: "relative";
+  margin-left: 30px;
+  position: relative;
+  animation: fadeInPop2 3.5s ease-out forwards;
 }
 .Under-Top {
     font-size: 20px;
+    margin-left: 30px;
+}
+.Plane {
+    display: inline-block;
+    font-size: 20px;
+    left: 200px;
+    top: 80px;
+    position: relative;
+}
+.Bubble {
+    display: inline-block;
+    font-size: 20px;
+    top: 145px;
+    right: 33px;
+    position: relative;
+}
+.City {
+    display: block;
+    font-size: 20px;
+    left: 490px;
+    bottom: 50px;
+    position: relative;
 }
 .Further {
     font-size: 20px;
@@ -47,6 +98,7 @@
 {
     position: relative;
     display: flex;
+    pointer-events: none;
 }
 .bubbles span 
 {
@@ -59,6 +111,7 @@
     box-shadow: 0 0 0 2px #a939ad44,
     0 0 4px #a939ad,
     0 0 8px #a939ad;
+    --start-y: 3000px; 
     animation: animate1 15s linear infinite;
     animation-duration: calc(400s / var(--i));
 }
@@ -79,16 +132,16 @@
     position: absolute;
     width: 15px;
     height: 15px;
-    background: #0e7ea0;
+    background: #645659;
     margin: 0 4px;
     border-radius: 50%;
-    box-shadow: 0 0 0 10px #0e7ea044,
-    0 0 50px #0e7ea0,
-    0 0 100px #0e7ea0;
-    animation: fadeInPop 2s ease-out forwards, animate2 5s linear infinite;
+    box-shadow: 0 0 0 10px #64565944,
+    0 0 50px #645659,
+    0 0 100px #645659;
+    animation: fadeInPop1 2s ease-out forwards, animate2 5s linear infinite;
     animation-duration: calc(200s / var(--i));
 }
-@keyframes fadeInPop {
+@keyframes fadeInPop1 {
   0% {
     opacity: 0;
     transform: scale(0);
@@ -98,9 +151,17 @@
     transform: scale(1);
   }
 }
+@keyframes fadeInPop2 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 @keyframes animate1 {
     0% {
-        transform: translateY(1800px);
+        transform: translateY(var(--start-y));
     }
     100% {
         transform: translateY(-10vh);

@@ -1,6 +1,10 @@
 import "./App.css";
 
-export function Background1() {
+interface Props{
+    windowHeight: string;
+}
+
+export function Background1(props: Props) {
   const bubbles = Array.from({ length: 160 }, (_, i) => ({
     id: i,
     // Random number for the CSS variable (--i)
@@ -11,8 +15,7 @@ export function Background1() {
     <div
       className="bubbles"
       style={{
-        position: "absolute",
-        inset: 0,
+        position: "relative",
         zIndex: 0,
         pointerEvents: "none",
       }}
@@ -20,7 +23,9 @@ export function Background1() {
       {bubbles.map((bubble) => (
         <span
           key={bubble.id}
-          style={{ "--i": bubble.iValue } as React.CSSProperties}
+          style={{ "--i": bubble.iValue,
+                   "--start-y": props.windowHeight
+          } as React.CSSProperties}
         ></span>
       ))}
     </div>
@@ -28,15 +33,17 @@ export function Background1() {
 }
 
 
+interface Props2{
+    windowHeight: number;
+}
 
 
-
-export function Background2() {
+export function Background2(props: Props2) {
   // Generate an array of "bubbles" with random data
   const bubbles = Array.from({ length: 100 }, (_, i) => ({
     id: i,
     iValue: Math.floor(Math.random() * 40) + 5, // random CSS var (--i)
-    top: `${Math.floor(Math.random() * 1600)}px`, // random vertical position
+    top: `${Math.floor(Math.random() * props.windowHeight)}px`, // random vertical position
     left: `${Math.floor(Math.random() * 1900)}px`, // random horizontal position
   }));
 
