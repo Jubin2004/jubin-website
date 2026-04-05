@@ -4,6 +4,7 @@ import "./App.css";
 import Game from "./Game";
 import Form from "./Php";
 import PlaneSeats from "./PlaneSeats";
+import HomeButton from "./components/HomeButton";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 
 function Home() {
@@ -30,6 +31,8 @@ function Home() {
 
 function App() {
   return (
+    <>
+    <HomeButton />
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/AppListGroup" element={<AppListGroup />} />
@@ -37,6 +40,7 @@ function App() {
       <Route path="/Game" element={<Game />} />
       <Route path="/Php" element={<Form />} />
     </Routes>
+    </>
   );
 }
 

@@ -23,7 +23,6 @@
 }
 
 .seat-arrow img {
-    width: 60px;
     cursor: pointer;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
     transition: transform 0.2s;
@@ -35,16 +34,16 @@
 
 /* Individual positions */
 .seat-arrow-1 {
-    left: 1015px;
+    left: 1020px;
     top: 40px;
 }
 
 .seat-arrow-2 {
-    left: 1500px;
+    left: 1520px;
     top: 170px;
 }
 
 .seat-arrow-3 {
-    left: 500px;
+    left: 520px;
     top: 300px;
 }

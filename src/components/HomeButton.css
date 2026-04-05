@@ -1,0 +1,28 @@
+.home-btn {
+    position: fixed;
+    top: 16px;
+    left: 16px;
+    z-index: 1000;
+}
+
+.home-btn-spinner {
+    display: inline-block;
+    animation: spin 30s linear infinite;
+}
+
+.home-btn-img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    transition: transform 0.2s;
+}
+
+.home-btn:hover .home-btn-img {
+    transform: scale(1.15);
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+}
