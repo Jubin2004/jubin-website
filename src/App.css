@@ -39,6 +39,7 @@
     height: 500px;
 }
 .Top {
+    margin-top: 15px;
   font-size: 100px;
   margin-left: 30px;
   position: relative;
@@ -52,13 +53,13 @@
     display: inline-block;
     font-size: 20px;
     left: 200px;
-    top: 80px;
+    top: 100px;
     position: relative;
 }
 .Bubble {
     display: inline-block;
     font-size: 20px;
-    top: 145px;
+    top: 170px;
     right: 33px;
     position: relative;
 }
@@ -68,6 +69,12 @@
     left: 490px;
     bottom: 50px;
     position: relative;
+}
+.Plane img, .Bubble img, .City img {
+    transition: transform 0.2s;
+}
+.Plane img:hover, .Bubble img:hover, .City img:hover {
+    transform: scale(1.15);
 }
 .Further {
     font-size: 20px;

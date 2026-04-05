@@ -3,6 +3,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
 import Game from "./Game";
 import Form from "./Php";
+import PlaneSeats from "./PlaneSeats";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 
 function Home() {
@@ -11,7 +12,7 @@ function Home() {
       <div style={{ position: "relative", zIndex: 1 }}>
         <h1 className="Top my-font">Welcome to my world.</h1>
         <h1 className="Under-Top my-font">~Jubin Gafur</h1>
-        <Link className="Plane my-font" to="/AppListGroup">
+        <Link className="Plane my-font" to="/PlaneSeats">
           <img src={arrow}/>
         </Link>
         <br />
@@ -32,6 +33,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/AppListGroup" element={<AppListGroup />} />
+      <Route path="/PlaneSeats" element={<PlaneSeats />} />
       <Route path="/Game" element={<Game />} />
       <Route path="/Php" element={<Form />} />
     </Routes>

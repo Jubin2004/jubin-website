@@ -38,7 +38,7 @@ function AppListGroup() {
 
   return (
     <div className="Parent-container">
-      <h1 className="Title my-font">The story of This World:</h1>
+      <h1 className="Title">The story of This World:</h1>
       <div className="carousel-wrapper">
         <button
           className="carousel-btn"

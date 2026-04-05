@@ -16,10 +16,10 @@
 }
 .Title{
     font-size: 60px;
+    color: black;
     margin-top: 10px;
     margin-bottom: 120px;
     position: relative;
-    color:rgb(126, 121, 175);
 }
 .Column-container{
     position: relative;
