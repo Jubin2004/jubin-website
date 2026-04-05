@@ -11,7 +11,6 @@
     width: 100%;
 }
 .my-font {
-  color:white;
   font-size: 25px;
 }
 .Title{
@@ -82,18 +81,22 @@
 .carousel-btn:hover .carousel-arrow-right {
     transform: rotate(-90deg) scale(1.15);
 }
+.Box-container, .Box-container * {
+    color: black;
+}
 .Box-container{
     position: relative;
-    background-color: rgb(29, 2, 63);
-    width: 600px;
-    height: 450px;
+    background-image: url("components/pics/frutaer/container_frutiger.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    flex-direction: row;
-    border: rgb(21, 12, 100) solid 5px;
-    border-radius: 5%;
-    animation: fadeIn 2s;
-    animation-duration: 3s;
-    
+    justify-content: center;
+    padding: 40px 50px;
+    box-sizing: border-box;
 }
 .vl {
   border-left: 8px double rgb(21, 12, 100);
@@ -101,19 +104,17 @@
   height: 200px;
 }
 .pic-in-cont{
-  width: 180px;
-  height: 220px;
+  width: 130px;
+  height: 160px;
   object-fit: cover;
-  margin: 5px;
-  border: 2px solid rgb(21, 12, 100);
-  border-radius: 20%;
+  margin: 4px;
+  border-radius: 10px;
 }
 .pic-in-cont-big{
-  width: 400px;
-  height: 300px;
+  width: 300px;
+  height: 220px;
   object-fit: cover;
-  border: 2px solid rgb(21, 12, 100);
-  border-radius: 20%;
+  border-radius: 10px;
 }
 @keyframes fadeIn {
   0% {

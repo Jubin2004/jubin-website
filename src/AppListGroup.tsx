@@ -2,7 +2,6 @@ import { useState } from "react";
 import "./AppListGroup.css";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 import baby_pic from "./components/pics/storyline/baby_jubin.jpg";
-import suikerspin from "./components/pics/storyline/suikerspin.jpg";
 import strand from "./components/pics/storyline/strand.jpg";
 import osv from "./components/pics/storyline/osv.jpg";
 import ah from "./components/pics/storyline/ah_duim.jpg";
@@ -20,7 +19,6 @@ function AppListGroup() {
     <div className="Box-container my-font">
       <div>A shy kid, but also very curious about the world around him. Trying to grasp as much of it as he possibly can.</div>
       <div>
-        <img className="pic-in-cont" src={suikerspin} />
         <img className="pic-in-cont" src={osv} />
         <img className="pic-in-cont" src={strand} />
       </div>
@@ -39,7 +37,7 @@ function AppListGroup() {
 
   return (
     <div className="Parent-container">
-      <h1 className="Title">The story of This World:</h1>
+      <h1 className="Title">The story of This World.</h1>
       <div className="carousel-wrapper">
         <button
           className="carousel-btn"
