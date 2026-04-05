@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./AppListGroup.css";
+import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 import baby_pic from "./components/pics/storyline/baby_jubin.jpg";
 import suikerspin from "./components/pics/storyline/suikerspin.jpg";
 import strand from "./components/pics/storyline/strand.jpg";
@@ -45,7 +46,7 @@ function AppListGroup() {
           onClick={() => setCurrent(c => c - 1)}
           style={{ visibility: current === 0 ? "hidden" : "visible" }}
         >
-          &#8592;
+          <img src={arrow} className="carousel-arrow carousel-arrow-left" />
         </button>
         <div className="carousel-viewport">
           <div
@@ -62,7 +63,7 @@ function AppListGroup() {
           onClick={() => setCurrent(c => c + 1)}
           style={{ visibility: current === slides.length - 1 ? "hidden" : "visible" }}
         >
-          &#8594;
+          <img src={arrow} className="carousel-arrow carousel-arrow-right" />
         </button>
       </div>
     </div>

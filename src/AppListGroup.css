@@ -63,14 +63,24 @@
 .carousel-btn {
     background: none;
     border: none;
-    color: white;
-    font-size: 50px;
     cursor: pointer;
     user-select: none;
-    transition: opacity 0.2s;
 }
-.carousel-btn:hover {
-    opacity: 0.6;
+.carousel-arrow {
+    width: 50px;
+    transition: transform 0.2s;
+}
+.carousel-arrow-left {
+    transform: rotate(90deg);
+}
+.carousel-arrow-right {
+    transform: rotate(-90deg);
+}
+.carousel-btn:hover .carousel-arrow-left {
+    transform: rotate(90deg) scale(1.15);
+}
+.carousel-btn:hover .carousel-arrow-right {
+    transform: rotate(-90deg) scale(1.15);
 }
 .Box-container{
     position: relative;
