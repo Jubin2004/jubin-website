@@ -1,21 +1,16 @@
 import AppListGroup from "./AppListGroup";
 import { Routes, Route, Link } from "react-router-dom";
 import "./App.css";
-import { Background1, Background2 } from "./Background";
 import Game from "./Game";
-import { PageHeight } from "./components/PageHeight";
 import Form from "./Php";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
-import frutiger_city from "./components/pics/frutaer/frutiger_cutout_2.png";
 
 function Home() {
-  const pageHeight = PageHeight();
-
   return (
     <div className="Top-container">
       <div style={{ position: "relative", zIndex: 1 }}>
-        <p className="Top my-font">Welcome to my world.</p>
-        <p className="Under-Top my-font">~Jubin Gafur</p>
+        <h1 className="Top my-font">Welcome to my world.</h1>
+        <h1 className="Under-Top my-font">~Jubin Gafur</h1>
         <Link className="Plane my-font" to="/AppListGroup">
           <img src={arrow}/>
         </Link>

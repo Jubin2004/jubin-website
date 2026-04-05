@@ -1,20 +1,20 @@
 .Parent-container{
-    position: "relative";
-    background-color: #2a423e;
-    min-height: 1800px;
-    min-width: 1200px;
+    position: static;
+    background-image: url("components/pics/frutaer/frut2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
-    z-index: 1;
 }
 .my-font {
-  font-family: 'PixelPurl', sans-serif;
   color:white;
-  font-size: 30px;
+  font-size: 25px;
 }
 .Title{
-    font-size: 150px;
+    font-size: 40px;
+    margin-top: 120px;
     position: relative;
     color:rgb(126, 121, 175);
 }

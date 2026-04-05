@@ -1,4 +1,5 @@
 import MovementGame from "./MovementGame";
+import "./MovementGame.css";
 import { Background1, Background2 } from "./Background";
 import "./App.css";
 import { PageHeight } from "./components/PageHeight";
@@ -11,8 +12,8 @@ export default function Game() {
       <Background1 windowHeight={`${pageHeight}px`} />
       <Background2 windowHeight={pageHeight} />
       <div className="Game-container">
-        <div className="Top game-font">Toby Fox</div>
-
+        <h1 className="Top game-font">Toby Fox</h1>
+        <br/>
         <MovementGame />
       </div>
     </div>

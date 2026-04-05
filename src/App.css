@@ -1,11 +1,3 @@
-@font-face {
-  font-family: 'FrutigerWeb';
-  src: url('fonts/Frutiger-Web.woff2') format('woff2'),
-       url('fonts/Frutiger-Web.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
 .All {
   position: relative;
   background-color: wheat;
@@ -15,13 +7,6 @@
   height: 100vh;
 }
 .my-font {
-  font-family: 'FrutigerWeb', Sans-Serif;
-  color: rgb(255, 255, 255);
-}.game-font {
-  font-family: 'PixelPurl';
-  font-style: normal;
-  font-weight: 500;
-  src: local('PixelPurl'), url('https://fonts.cdnfonts.com/s/124879/PixelPurl.woff') format('woff');
   color: rgb(255, 255, 255);
 }
 .Top-container {
