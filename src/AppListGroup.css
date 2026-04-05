@@ -7,14 +7,17 @@
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
 }
 .my-font {
   color:white;
   font-size: 25px;
 }
 .Title{
-    font-size: 40px;
-    margin-top: 120px;
+    font-size: 60px;
+    margin-top: 10px;
+    margin-bottom: 120px;
     position: relative;
     color:rgb(126, 121, 175);
 }
@@ -25,6 +28,49 @@
     align-items: center;
     justify-content: center;
     margin: 20px 20px 20px 20px;
+}
+.carousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    margin-top: 20px;
+}
+.carousel-btn {
+    position: absolute;
+    z-index: 10;
+}
+.carousel-btn:first-child {
+    left: 20px;
+}
+.carousel-btn:last-child {
+    right: 20px;
+}
+.carousel-viewport {
+    width: 100vw;
+    overflow: hidden;
+}
+.carousel-track {
+    display: flex;
+    transition: transform 0.8s ease;
+}
+.carousel-slide {
+    min-width: 100vw;
+    display: flex;
+    justify-content: center;
+}
+.carousel-btn {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 50px;
+    cursor: pointer;
+    user-select: none;
+    transition: opacity 0.2s;
+}
+.carousel-btn:hover {
+    opacity: 0.6;
 }
 .Box-container{
     position: relative;
