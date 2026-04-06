@@ -9,6 +9,13 @@ import gym from "./components/pics/storyline/gym_duim.jpg";
 
 function AppListGroup() {
   const [current, setCurrent] = useState(0);
+  const [blurring, setBlurring] = useState(false);
+
+  function navigateTo(next: number) {
+    setBlurring(true);
+    setCurrent(next);
+    setTimeout(() => setBlurring(false), 800);
+  }
 
   const slides = [
     <div className="Box-container my-font">
@@ -37,11 +44,12 @@ function AppListGroup() {
 
   return (
     <div className="Parent-container">
+      <div className="bg-layer" style={{ filter: blurring ? "blur(12px)" : "blur(0px)" }} />
       <h1 className="Title">The story of This World.</h1>
       <div className="carousel-wrapper">
         <button
           className="carousel-btn"
-          onClick={() => setCurrent(c => c - 1)}
+          onClick={() => navigateTo(current - 1)}
           style={{ visibility: current === 0 ? "hidden" : "visible" }}
         >
           <img src={arrow} className="carousel-arrow carousel-arrow-left" />
@@ -58,7 +66,7 @@ function AppListGroup() {
         </div>
         <button
           className="carousel-btn"
-          onClick={() => setCurrent(c => c + 1)}
+          onClick={() => navigateTo(current + 1)}
           style={{ visibility: current === slides.length - 1 ? "hidden" : "visible" }}
         >
           <img src={arrow} className="carousel-arrow carousel-arrow-right" />

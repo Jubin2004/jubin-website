@@ -1,14 +1,20 @@
 .Parent-container{
-    position: static;
-    background-image: url("components/pics/frutaer/frut2.jpg");
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
+    position: relative;
     text-align: center;
     margin: 0 auto;
     overflow: hidden;
     min-height: 100vh;
     width: 100%;
+}
+.bg-layer {
+    position: absolute;
+    inset: 0;
+    background-image: url("components/pics/frutaer/frut2.jpg");
+    background-size: cover;
+    background-position: center;
+    transform: scale(1.05);
+    transition: filter 0.4s ease;
+    z-index: 1;
 }
 .my-font {
   font-size: 25px;
@@ -19,6 +25,7 @@
     margin-top: 10px;
     margin-bottom: 120px;
     position: relative;
+    z-index: 2;
 }
 .Column-container{
     position: relative;
