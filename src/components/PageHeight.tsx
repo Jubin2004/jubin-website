@@ -1,11 +1,11 @@
 import { useState, useEffect } from "react";
 
 export function PageHeight() {
-  const [pageHeight, setPageHeight] = useState(0);
+  const [pageHeight, setPageHeight] = useState(() => window.innerHeight);
 
   useEffect(() => {
     const updateHeight = () => {
-      setPageHeight(document.documentElement.scrollHeight);
+      setPageHeight(window.innerHeight);
     };
 
     updateHeight();

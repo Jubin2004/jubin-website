@@ -7,8 +7,8 @@ interface Props{
 export function Background1(props: Props) {
   const bubbles = Array.from({ length: 160 }, (_, i) => ({
     id: i,
-    // Random number for the CSS variable (--i)
-    iValue: Math.floor(Math.random() * 30) + 5, // between 5 and 35
+    iValue: Math.floor(Math.random() * 30) + 5,
+    startY: `${Math.floor(Math.random() * parseInt(props.windowHeight))}px`,
   }));
 
   return (
@@ -24,7 +24,7 @@ export function Background1(props: Props) {
         <span
           key={bubble.id}
           style={{ "--i": bubble.iValue,
-                   "--start-y": props.windowHeight
+                   "--start-y": bubble.startY
           } as React.CSSProperties}
         ></span>
       ))}
