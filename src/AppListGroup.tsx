@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import "./AppListGroup.css";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 import baby_pic from "./components/pics/storyline/baby_jubin.jpg";
@@ -7,14 +7,31 @@ import osv from "./components/pics/storyline/osv.jpg";
 import ah from "./components/pics/storyline/ah_duim.jpg";
 import gym from "./components/pics/storyline/gym_duim.jpg";
 
+function generateStripes() {
+  return Array.from({ length: 25 }, (_, i) => ({
+    id: i,
+    top: `${Math.random() * 100}%`,
+    width: `${Math.floor(Math.random() * 500) + 200}px`,
+    height: `${Math.floor(Math.random() * 4) + 2}px`,
+    delay: `-${Math.floor(Math.random() * 750)}ms`,
+    opacity: Math.random() * 0.4 + 0.3,
+  }));
+}
+
 function AppListGroup() {
   const [current, setCurrent] = useState(0);
   const [blurring, setBlurring] = useState(false);
+  const [direction, setDirection] = useState<'left' | 'right'>('right');
+  const [stripes, setStripes] = useState(generateStripes());
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   function navigateTo(next: number) {
+    setStripes(prev => blurring ? [...prev, ...generateStripes()] : generateStripes());
+    setDirection(next > current ? 'right' : 'left');
     setBlurring(true);
     setCurrent(next);
-    setTimeout(() => setBlurring(false), 800);
+    if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    timeoutRef.current = setTimeout(() => setBlurring(false), 800);
   }
 
   const slides = [
@@ -45,6 +62,23 @@ function AppListGroup() {
   return (
     <div className="Parent-container">
       <div className="bg-layer" style={{ filter: blurring ? "blur(12px)" : "blur(0px)" }} />
+      {blurring && (
+        <div className="stripes-container">
+          {stripes.map(s => (
+            <span
+              key={s.id}
+              className={`speed-stripe speed-stripe-${direction}`}
+              style={{
+                top: s.top,
+                width: s.width,
+                height: s.height,
+                opacity: s.opacity,
+                animationDelay: s.delay,
+              }}
+            />
+          ))}
+        </div>
+      )}
       <h1 className="Title">The story of This World.</h1>
       <div className="carousel-wrapper">
         <button
