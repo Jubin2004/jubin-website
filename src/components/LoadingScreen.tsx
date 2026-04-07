@@ -1,4 +1,5 @@
 import "./LoadingScreen.css";
+import dogRight from "./pics/dogs/dog_right.png";
 
 export default function LoadingScreen({ fading }: { fading: boolean }) {
   return (
@@ -6,7 +7,9 @@ export default function LoadingScreen({ fading }: { fading: boolean }) {
       <div className="loading-orb">
         <div className="loading-ring"></div>
         <div className="loading-ring loading-ring-2"></div>
-        <div className="loading-core"></div>
+        <span className="loading-dog-spinner">
+          <img src={dogRight} alt="loading" className="loading-dog" />
+        </span>
       </div>
     </div>
   );

@@ -40,11 +40,13 @@
   font-size: 100px;
   margin-left: 30px;
   position: relative;
-  animation: fadeInPop2 3.5s ease-out forwards;
+  animation: fadeInPop2 2s ease-out forwards;
 }
 .Under-Top {
     font-size: 20px;
     margin-left: 30px;
+    animation: fadeInPop2 1.5s ease-out both;
+    animation-delay: 3.5s;
 }
 .Plane {
     display: inline-block;
