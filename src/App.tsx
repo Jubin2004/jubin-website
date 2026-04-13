@@ -7,6 +7,7 @@ import Form from "./Php";
 import PlaneSeats from "./PlaneSeats";
 import HomeButton from "./components/HomeButton";
 import LoadingScreen from "./components/LoadingScreen";
+import SoundControl from "./components/SoundControl";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 
 function Home() {
@@ -54,6 +55,7 @@ function Home() {
 function App() {
   return (
     <>
+    <SoundControl />
     <HomeButton />
     <Routes>
       <Route path="/" element={<Home />} />
