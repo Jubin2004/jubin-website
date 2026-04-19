@@ -15,13 +15,24 @@ import bolderen from "./components/pics/storyline/bolderen.jpeg";
 
 
 function generateStripes() {
-  return Array.from({ length: 25 }, (_, i) => ({
+  const colors = [
+    'rgba(255,255,255,0.95)',
+    'rgba(79,195,220,0.8)',
+    'rgba(80,180,230,0.7)',
+    'rgba(140,210,245,0.6)',
+    'rgba(255,255,255,0.5)',
+    'rgba(169,57,173,0.3)',
+  ];
+  return Array.from({ length: 35 }, (_, i) => ({
     id: i,
     top: `${Math.random() * 100}%`,
-    width: `${Math.floor(Math.random() * 500) + 200}px`,
-    height: `${Math.floor(Math.random() * 4) + 2}px`,
-    delay: `-${Math.floor(Math.random() * 750)}ms`,
-    opacity: Math.random() * 0.4 + 0.3,
+    width: `${Math.floor(Math.random() * 900) + 300}px`,
+    height: `${Math.floor(Math.random() * 3) + 1}px`,
+    delay: `${Math.random() * 0.15}s`,
+    duration: `${0.3 + Math.random() * 0.4}s`,
+    opacity: i < 5 ? 0.95 : Math.random() * 0.5 + 0.3,
+    color: colors[i % colors.length],
+    blur: i % 4 === 0 ? '3px' : '0px',
   }));
 }
 
@@ -98,6 +109,10 @@ function AppListGroup() {
                 height: s.height,
                 opacity: s.opacity,
                 animationDelay: s.delay,
+                animationDuration: s.duration,
+                background: s.color,
+                filter: `blur(${s.blur})`,
+                boxShadow: `0 0 6px ${s.color}, 0 0 12px ${s.color}`,
               }}
             />
           ))}

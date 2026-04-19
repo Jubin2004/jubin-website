@@ -16,22 +16,30 @@
 }
 .speed-stripe {
     position: absolute;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 2px;
+    border-radius: 3px;
 }
 .speed-stripe-right {
-    animation: stripe-sweep-right 0.8s linear forwards;
+    animation: stripe-sweep-right linear forwards;
 }
 .speed-stripe-left {
-    animation: stripe-sweep-left 0.8s linear forwards;
+    animation: stripe-sweep-left linear forwards;
 }
 @keyframes stripe-sweep-right {
-    from { transform: translateX(-110vw); }
-    to   { transform: translateX(110vw); }
+    from { transform: translateX(-120vw); }
+    to   { transform: translateX(120vw); }
 }
 @keyframes stripe-sweep-left {
-    from { transform: translateX(110vw); }
-    to   { transform: translateX(-110vw); }
+    from { transform: translateX(120vw); }
+    to   { transform: translateX(-120vw); }
+}
+.speed-flash {
+    position: absolute; inset: 0; z-index: 5; pointer-events: none;
+    background: white;
+    animation: flash-out 0.15s ease-out forwards;
+}
+@keyframes flash-out {
+    from { opacity: 0.35; }
+    to   { opacity: 0; }
 }
 .bg-layer {
     position: absolute;
