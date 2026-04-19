@@ -6,7 +6,7 @@ import { PageHeight } from "./components/PageHeight";
 
 export default function Game() {
   const pageHeight = PageHeight();
-  
+
   return (
     <div style={{ overflow: "hidden", minHeight: "100vh", position: "relative" }}>
       <Background1 windowHeight={`${pageHeight}px`} />

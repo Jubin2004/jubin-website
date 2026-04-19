@@ -26,6 +26,8 @@
 }
 
 .seat-arrow img {
+    width: 50px;
+    height: 50px;
     cursor: pointer;
     filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
     transition: transform 0.2s;

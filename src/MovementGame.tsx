@@ -77,7 +77,7 @@ export default function MovementGame() {
             transition: pos.noTransition ? "none" : undefined,
           }}
         >
-          <img src={dogImg}></img>
+          <img src={dogImg} />
         </div>
       </div>
       <div className="controls-container">
