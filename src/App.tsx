@@ -51,7 +51,7 @@ function Home({ onLoaded }: { onLoaded: () => void }) {
         {hovered === 'bubble' && (
           <div className="arrow-tooltip">
             <div className="arrow-tooltip-label">Movement Game</div>
-            <div className="arrow-tooltip-sub">Control the dog</div>
+            <div className="arrow-tooltip-sub">Toby fox?</div>
           </div>
         )}
         <Link to="/Game"><img src={arrow}/></Link>
