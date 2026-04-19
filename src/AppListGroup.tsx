@@ -56,7 +56,7 @@ function AppListGroup() {
     <div className="Box-container my-font">
       <div>On a valued day in Amsterdam, The Netherlands, a baby was born:</div>
       <div><img className="pic-in-cont-big" src={baby_pic} /></div>
-      05-05-2004
+      <div className="date-pill">05-05-2004</div>
     </div>,
     <div className="Box-container my-font">
       <div>A shy kid, but also very curious about the world around him. Trying to grasp as much of it as he possibly can.</div>
@@ -64,7 +64,7 @@ function AppListGroup() {
         <img className="pic-in-cont" src={osv} />
         <img className="pic-in-cont" src={strand} />
       </div>
-      2004 - 2016
+      <div className="date-pill">2004 - 2016</div>
     </div>,
     <div className="Box-container my-font">
       <div>Getting older, slowly building his own identity. Evaluating what he likes and what he doesn't. What he wants to build his own life around.</div>
@@ -72,7 +72,7 @@ function AppListGroup() {
         <img className="pic-in-cont" src={ah} />
         <img className="pic-in-cont" src={gym} />
       </div>
-      <div>2016 - 2022</div>
+      <div className="date-pill">2016 - 2022</div>
     </div>,
     <div className="Box-container my-font">
       <div>Entering the student life, he explores the Computer Science bachelor at the UvA.</div>
@@ -80,7 +80,7 @@ function AppListGroup() {
         <img className="pic-in-cont" src={selfie_uni} />
         <video className="pic-in-cont" src={paraplu} autoPlay loop muted />
       </div>
-      <div>2023 - 2025</div>
+      <div className="date-pill">2023 - 2025</div>
     </div>,
     <div className="Box-container Box-container--lg my-font">
       <div>At the same time he never forgot the importance of 'side quests'.</div>

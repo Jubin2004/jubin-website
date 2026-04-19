@@ -54,14 +54,14 @@
 .my-font {
   font-size: 25px;
 }
-.Title{
-    font-size: 4cqw;
-    color: black;
-    margin-top: 10px;
-    margin-bottom: 30px;
-    position: relative;
-    z-index: 3;
-    white-space: nowrap;
+.Title {
+  font-size: 60px;
+  color: #fff;
+  margin-top: 10px;
+  margin-bottom: 120px;
+  position: relative;
+  z-index: 3;
+  text-shadow: 0 0 30px rgba(80,180,230,0.8), 0 2px 8px rgba(0,0,0,0.4);
 }
 .Column-container{
     position: relative;
@@ -126,22 +126,39 @@
     transform: rotate(-90deg) scale(1.15);
 }
 .Box-container, .Box-container * {
-    color: black;
+  color: #1a1a2e;
 }
-.Box-container{
-    position: relative;
-    background-image: url("components/pics/frutaer/container_frutiger.png");
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    width: 500px;
-    height: 500px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 40px 50px;
-    margin-top: 100px;
-    box-sizing: border-box;
+.Box-container {
+  position: relative;
+  background-image: url("components/pics/frutaer/container_frutiger.png");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 50px;
+  box-sizing: border-box;
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+  text-shadow: 0 1px 3px rgba(255,255,255,0.6);
+}
+.date-pill {
+  display: inline-block;
+  background: rgba(79,195,220,0.25);
+  border: 1px solid rgba(79,195,220,0.5);
+  border-radius: 20px;
+  backdrop-filter: blur(4px);
+  padding: 4px 16px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #0c3a5c;
+  letter-spacing: 0.04em;
+  box-shadow: 0 0 10px rgba(79,195,220,0.3), inset 0 1px 0 rgba(255,255,255,0.5);
+  margin-top: 12px;
 }
 .vl {
   border-left: 8px double rgb(21, 12, 100);

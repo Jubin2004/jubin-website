@@ -12,6 +12,7 @@ import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 
 function Home({ onLoaded }: { onLoaded: () => void }) {
   const [fading, setFading] = useState(false);
+  const [hovered, setHovered] = useState<string | null>(null);
   const [loading, setLoading] = useState(() => {
     try {
       return !sessionStorage.getItem("visited");
@@ -37,15 +38,33 @@ function Home({ onLoaded }: { onLoaded: () => void }) {
     <div className="Top-container">
       <h1 className="Top">Welcome to my world.</h1>
       <h1 className="Under-Top">~Jubin Gafur</h1>
-      <Link className="Plane" to="/PlaneSeats">
-        <img src={arrow}/>
-      </Link>
-      <Link className="Bubble" to="/Game">
-        <img src={arrow}/>
-      </Link>
-      <Link className="City" to="/">
-        <img src={arrow}/>
-      </Link>
+      <div className="Plane" onMouseEnter={() => setHovered('plane')} onMouseLeave={() => setHovered(null)}>
+        {hovered === 'plane' && (
+          <div className="arrow-tooltip">
+            <div className="arrow-tooltip-label">Plane Seats</div>
+            <div className="arrow-tooltip-sub">Choose your seat</div>
+          </div>
+        )}
+        <Link to="/PlaneSeats"><img src={arrow}/></Link>
+      </div>
+      <div className="Bubble" onMouseEnter={() => setHovered('bubble')} onMouseLeave={() => setHovered(null)}>
+        {hovered === 'bubble' && (
+          <div className="arrow-tooltip">
+            <div className="arrow-tooltip-label">Movement Game</div>
+            <div className="arrow-tooltip-sub">Control the dog</div>
+          </div>
+        )}
+        <Link to="/Game"><img src={arrow}/></Link>
+      </div>
+      <div className="City" onMouseEnter={() => setHovered('city')} onMouseLeave={() => setHovered(null)}>
+        {hovered === 'city' && (
+          <div className="arrow-tooltip">
+            <div className="arrow-tooltip-label">Coming soon</div>
+            <div className="arrow-tooltip-sub">Stay tuned</div>
+          </div>
+        )}
+        <Link to="/"><img src={arrow}/></Link>
+      </div>
     </div>
     </>
   );
