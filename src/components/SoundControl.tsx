@@ -3,7 +3,7 @@ import "./SoundControl.css";
 import lease from "./sounds/LEASE by Takeshi Abo but slightly bitcrushed for nostalgia.mp3";
 import clickSfx from "./sounds/Mouse Click Sound Effect.mp3";
 
-export default function SoundControl() {
+export default function SoundControl({ hidden }: { hidden?: boolean }) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(1);
   const prevVolumeRef = useRef(1);
@@ -45,7 +45,6 @@ export default function SoundControl() {
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-
     audio.play().catch(() => {
       const unlock = () => {
         audio.play();
@@ -60,7 +59,7 @@ export default function SoundControl() {
   return (
     <>
       <audio ref={audioRef} src={lease} loop />
-      <div className="sound-control">
+      <div className="sound-control" style={hidden ? { opacity: 0, pointerEvents: "none" } : undefined}>
         <button className="mute-btn" onClick={toggleMute}>
           {volume === 0 ? "🔇" : "🔊"}
         </button>

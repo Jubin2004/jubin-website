@@ -10,7 +10,8 @@ import LoadingScreen from "./components/LoadingScreen";
 import SoundControl from "./components/SoundControl";
 import arrow from "./components/pics/frutaer/frutiger_arrow_down.png";
 
-function Home() {
+function Home({ onLoaded }: { onLoaded: () => void }) {
+  const [fading, setFading] = useState(false);
   const [loading, setLoading] = useState(() => {
     try {
       return !sessionStorage.getItem("visited");
@@ -18,13 +19,15 @@ function Home() {
       return true;
     }
   });
-  const [fading, setFading] = useState(false);
 
   useEffect(() => {
-    if (!loading) return;
+    if (!loading) {
+      onLoaded();
+      return;
+    }
     try { sessionStorage.setItem("visited", "true"); } catch {}
     const fadeTimer = setTimeout(() => setFading(true), 1500);
-    const doneTimer = setTimeout(() => setLoading(false), 2000);
+    const doneTimer = setTimeout(() => { setLoading(false); onLoaded(); }, 2000);
     return () => { clearTimeout(fadeTimer); clearTimeout(doneTimer); };
   }, []);
 
@@ -53,12 +56,20 @@ function Home() {
 }
 
 function App() {
+  const [showUI, setShowUI] = useState(() => {
+    try {
+      return !!sessionStorage.getItem("visited") || window.location.pathname !== "/";
+    } catch {
+      return true;
+    }
+  });
+
   return (
     <>
-    <SoundControl />
-    <HomeButton />
+    <SoundControl hidden={!showUI} />
+    {showUI && <HomeButton />}
     <Routes>
-      <Route path="/" element={<Home />} />
+      <Route path="/" element={<Home onLoaded={() => setShowUI(true)} />} />
       <Route path="/AppListGroup" element={<AppListGroup />} />
       <Route path="/PlaneSeats" element={<PlaneSeats />} />
       <Route path="/Game" element={<Game />} />
