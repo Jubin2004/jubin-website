@@ -4,7 +4,8 @@
     margin: 0 auto;
     overflow: hidden;
     min-height: 100vh;
-    width: 100%;
+    width: 100vw;
+    container-type: inline-size;
 }
 .stripes-container {
     position: absolute;
@@ -46,12 +47,13 @@
   font-size: 25px;
 }
 .Title{
-    font-size: 60px;
+    font-size: 4cqw;
     color: black;
     margin-top: 10px;
-    margin-bottom: 120px;
+    margin-bottom: 30px;
     position: relative;
     z-index: 3;
+    white-space: nowrap;
 }
 .Column-container{
     position: relative;
@@ -130,6 +132,7 @@
     align-items: center;
     justify-content: center;
     padding: 40px 50px;
+    margin-top: 100px;
     box-sizing: border-box;
 }
 .vl {
@@ -149,6 +152,15 @@
   height: 220px;
   object-fit: cover;
   border-radius: 10px;
+}
+.Box-container--lg {
+  width: 640px;
+  height: 620px;
+  margin-top: 30px;
+}
+.pic-in-cont--lg {
+  width: 175px;
+  height: 210px;
 }
 @keyframes fadeIn {
   0% {

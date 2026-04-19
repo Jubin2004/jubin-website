@@ -35,21 +35,17 @@ function Home({ onLoaded }: { onLoaded: () => void }) {
     <>
     {loading && <LoadingScreen fading={fading} />}
     <div className="Top-container">
-      <div style={{ position: "relative", zIndex: 1 }}>
-        <h1 className="Top">Welcome to my world.</h1>
-        <h1 className="Under-Top">~Jubin Gafur</h1>
-        <Link className="Plane" to="/PlaneSeats">
-          <img src={arrow}/>
-        </Link>
-        <br />
-        <Link className="Bubble" to="/Game">
-          <img src={arrow}/>
-        </Link>
-        <br />
-        <Link className="City" to="/">
-          <img src={arrow}/>
-        </Link>
-      </div>
+      <h1 className="Top">Welcome to my world.</h1>
+      <h1 className="Under-Top">~Jubin Gafur</h1>
+      <Link className="Plane" to="/PlaneSeats">
+        <img src={arrow}/>
+      </Link>
+      <Link className="Bubble" to="/Game">
+        <img src={arrow}/>
+      </Link>
+      <Link className="City" to="/">
+        <img src={arrow}/>
+      </Link>
     </div>
     </>
   );

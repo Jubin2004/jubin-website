@@ -6,6 +6,13 @@ import strand from "./components/pics/storyline/strand.jpg";
 import osv from "./components/pics/storyline/osv.jpg";
 import ah from "./components/pics/storyline/ah_duim.jpg";
 import gym from "./components/pics/storyline/gym_duim.jpg";
+import selfie_uni from "./components/pics/storyline/selfie_uni.jpeg";
+import paraplu from "./components/pics/storyline/paraplu.mp4";
+import jjk from "./components/pics/storyline/jjk.jpeg";
+import mic from "./components/pics/storyline/mic.jpeg";
+import olifant from "./components/pics/storyline/olifant.jpeg";
+import bolderen from "./components/pics/storyline/bolderen.jpeg";
+
 
 function generateStripes() {
   return Array.from({ length: 25 }, (_, i) => ({
@@ -56,7 +63,24 @@ function AppListGroup() {
       </div>
       <div>2016 - 2022</div>
     </div>,
-    <div className="Box-container my-font"></div>,
+    <div className="Box-container my-font">
+      <div>Entering the student life, he explores the Computer Science bachelor at the UvA.</div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <img className="pic-in-cont" src={selfie_uni} />
+        <video className="pic-in-cont" src={paraplu} autoPlay loop muted />
+      </div>
+      <div>2023 - 2025</div>
+    </div>,
+    <div className="Box-container Box-container--lg my-font">
+      <div>At the same time he never forgot the importance of 'side quests'.</div>
+      <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center" }}>
+        <img className="pic-in-cont pic-in-cont--lg" src={jjk} />
+        <img className="pic-in-cont pic-in-cont--lg" src={mic} />
+        <img className="pic-in-cont pic-in-cont--lg" src={olifant} />
+        <img className="pic-in-cont pic-in-cont--lg" src={bolderen} />
+      </div>
+      <div></div>
+    </div>,
   ];
 
   return (
