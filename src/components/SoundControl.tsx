@@ -7,6 +7,7 @@ export default function SoundControl({ hidden, muted }: { hidden?: boolean; mute
   const audioRef = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(1);
   const prevVolumeRef = useRef(1);
+  const mutedRef = useRef(!!muted);
 
   const toggleMute = () => {
     if (volume > 0) {
@@ -43,6 +44,7 @@ export default function SoundControl({ hidden, muted }: { hidden?: boolean; mute
   }, []);
 
   useEffect(() => {
+    mutedRef.current = !!muted;
     const audio = audioRef.current;
     if (!audio) return;
     if (muted) {
@@ -55,15 +57,20 @@ export default function SoundControl({ hidden, muted }: { hidden?: boolean; mute
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
-    audio.play().catch(() => {
-      const unlock = () => {
-        audio.play();
-        window.removeEventListener("click", unlock);
-        window.removeEventListener("keydown", unlock);
-      };
-      window.addEventListener("click", unlock);
-      window.addEventListener("keydown", unlock);
-    });
+
+    const tryPlay = () => {
+      if (mutedRef.current) return;
+      audio.play().catch(() => {});
+    };
+
+    tryPlay();
+
+    window.addEventListener("click", tryPlay);
+    window.addEventListener("keydown", tryPlay);
+    return () => {
+      window.removeEventListener("click", tryPlay);
+      window.removeEventListener("keydown", tryPlay);
+    };
   }, []);
 
   return (
