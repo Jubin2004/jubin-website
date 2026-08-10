@@ -1,10 +1,11 @@
 import AppListGroup from "./AppListGroup";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route, useNavigate, useLocation } from "react-router-dom";
 import { useState, useEffect, createContext, useContext } from "react";
 import "./App.css";
 import Game from "./Game";
 import Form from "./Php";
 import PlaneSeats from "./PlaneSeats";
+import VideoRoom from "./VideoRoom";
 import HomeButton from "./components/HomeButton";
 import LoadingScreen from "./components/LoadingScreen";
 import SoundControl from "./components/SoundControl";
@@ -60,11 +61,11 @@ function Home({ onLoaded }: { onLoaded: () => void }) {
         )}
         <img src={arrow}/>
       </div>
-      <div className="City" onMouseEnter={() => setHovered('city')} onMouseLeave={() => setHovered(null)} onClick={() => goTo('/')} style={{ cursor: 'pointer' }}>
+      <div className="City" onMouseEnter={() => setHovered('city')} onMouseLeave={() => setHovered(null)} onClick={() => goTo('/Movie')} style={{ cursor: 'pointer' }}>
         {hovered === 'city' && (
           <div className="arrow-tooltip">
-            <div className="arrow-tooltip-label">Coming soon</div>
-            <div className="arrow-tooltip-sub">Stay tuned</div>
+            <div className="arrow-tooltip-label">The City</div>
+            <div className="arrow-tooltip-sub">Password required</div>
           </div>
         )}
         <img src={arrow}/>
@@ -84,6 +85,8 @@ function App() {
   });
   const [transitioning, setTransitioning] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
+  const onVideoRoom = location.pathname === "/Movie";
 
   function goTo(path: string) {
     setTransitioning(true);
@@ -95,13 +98,14 @@ function App() {
 
   return (
     <NavContext.Provider value={goTo}>
-      <SoundControl hidden={!showUI} />
+      <SoundControl hidden={!showUI || onVideoRoom} muted={onVideoRoom} />
       {showUI && <HomeButton />}
       <div className={transitioning ? 'page-out' : 'page-in'} style={{ position: 'fixed', inset: 0 }}>
         <Routes>
           <Route path="/" element={<Home onLoaded={() => setShowUI(true)} />} />
           <Route path="/AppListGroup" element={<AppListGroup />} />
           <Route path="/PlaneSeats" element={<PlaneSeats />} />
+          <Route path="/Movie" element={<VideoRoom />} />
           <Route path="/Game" element={<Game />} />
           <Route path="/Php" element={<Form />} />
         </Routes>

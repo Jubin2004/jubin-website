@@ -3,7 +3,7 @@ import "./SoundControl.css";
 import lease from "./sounds/LEASE by Takeshi Abo but slightly bitcrushed for nostalgia.mp3";
 import clickSfx from "./sounds/Mouse Click Sound Effect.mp3";
 
-export default function SoundControl({ hidden }: { hidden?: boolean }) {
+export default function SoundControl({ hidden, muted }: { hidden?: boolean; muted?: boolean }) {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [volume, setVolume] = useState(1);
   const prevVolumeRef = useRef(1);
@@ -41,6 +41,16 @@ export default function SoundControl({ hidden }: { hidden?: boolean }) {
     document.addEventListener("click", handleArrowClick);
     return () => document.removeEventListener("click", handleArrowClick);
   }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    if (muted) {
+      audio.pause();
+    } else {
+      audio.play().catch(() => {});
+    }
+  }, [muted]);
 
   useEffect(() => {
     const audio = audioRef.current;
